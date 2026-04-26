@@ -35,6 +35,8 @@
                       (cxml:with-element "c"
                         (cxml:attribute "r" ref)
                         
+                        (if (cell-style-id cell)
+                          (cxml:attribute "s" (cell-style-id cell)))
                         (let ((final-type (or type 
                                              (cond 
                                                ((numberp val) "n")
