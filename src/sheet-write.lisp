@@ -8,6 +8,10 @@
       (cxml:attribute "xmlns:r" "http://schemas.openxmlformats.org/officeDocument/2006/relationships")
       
       ;; Sheet Data
+      (cxml:with-element "cols"
+        (cxml:with-element "col" (cxml:attribute "min" "1") (cxml:attribute "max" "1") (cxml:attribute "width" "100") (cxml:attribute "customWidth" "1"))
+        (cxml:with-element "col" (cxml:attribute "min" "2") (cxml:attribute "max" "2") (cxml:attribute "width" "24") (cxml:attribute "customWidth" "1")))
+
       (cxml:with-element "sheetData"
         (let ((rows (make-hash-table :test 'eql)))
           ;; Group cells by row index
